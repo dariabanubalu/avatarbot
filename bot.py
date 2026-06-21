@@ -97,8 +97,8 @@ def make_preview(user_photo_bytes: bytes) -> bytes:
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Привет! 👋\n\n"
-        "Я помогу добавить рамку к твоей аватарке.\n"
-        "Отправь мне своё фото, и я покажу варианты рамок."
+        "Я помогу добавить стильную рамку к твоей аватарке.\n"
+        "Отправь мне своё фото в квадратном, и я покажу варианты рамок."
     )
 
 
@@ -152,7 +152,8 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.message.reply_document(
         document=result_buf,
         filename=f"avatar_{frame['name']}.png",
-        caption=f"✅ Готово! Рамка «{frame['name']}»\n\nОтправь новое фото, чтобы попробовать другую рамку."
+        caption=f"✅ Готово! Рамка «{frame['name']}»\n\nОтправь новое фото, чтобы попробовать другую рамку.",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📢 Telegram-канал WIM", url="https://t.me/wim_industries_russia")]])
     )
 
 
