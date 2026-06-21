@@ -1,8 +1,5 @@
-[phases.setup]
-nixPkgs = ["python311", "gcc", "zlib", "libjpeg", "libpng"]
-
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
+cmds = ["pip install --no-cache-dir --only-binary=:all: Pillow==10.4.0 && pip install python-telegram-bot==20.7"]
 
 [start]
 cmd = "python bot.py"
