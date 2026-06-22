@@ -85,7 +85,7 @@ def make_preview(user_photo_bytes: bytes) -> bytes:
         grid.paste(thumb, (x, y))
 
         if draw:
-            label = str(i+1)
+            label = ""
             draw.text((x + THUMB // 2, y + THUMB + 10), label, fill=(30, 30, 30, 255), font=font, anchor="mt")
 
     buf = io.BytesIO()
